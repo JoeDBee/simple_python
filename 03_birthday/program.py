@@ -19,12 +19,12 @@ def days_from_birthday(birthday):
     dt_year = ts - birthday
     dt_year = round(dt_year.days/365.25)
 
-    return {'dt1': dt_days.days, 'dt2': dt_year}
+    return [dt_days.days, dt_year]
 
 
 def print_birthday_info(info):
-    age = info["dt2"]
-    days = info["dt1"]
+    age = info[1]
+    days = info[0]
     print('You are currently {} years old \n'.format(age))
     if days > 0:
         print('Your birthday is in {} days \n'.format(days))
