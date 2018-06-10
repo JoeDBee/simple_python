@@ -5,14 +5,14 @@ print('     Guess the number!       ')
 print('-----------------------------\n')
 
 number = random.randint(0, 100)
-guess = int(input('Guess a number between 0 and 100: \n'))
+guess = -1
 
 while guess != number:
+    guess = int(input('Guess a number between 0 and 100: \n'))
     if guess < number:
-        print('too low')
-        guess = int(input('Guess again: \n'))
+        print('Your guess of {} is too low, try again\n'.format(guess))
+
     elif guess > number:
-        print('too high')
-        guess = int(input('Guess again: \n'))
+        print('Your guess of {} is too high, try again\n'.format(guess))
 
 print('Correct!')
