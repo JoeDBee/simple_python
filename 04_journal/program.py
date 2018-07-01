@@ -1,5 +1,6 @@
 import journal
 
+
 def print_header():
     print('-------------------------')
     print('     Journal App         ')
