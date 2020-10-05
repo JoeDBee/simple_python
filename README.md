@@ -1,5 +1,3 @@
-python_jumpstart
+#Simple Python
 
-This repo is intended to store simple Python apps which were/are created while learning Python.
-
-Currently there are no external dependencies/requirements.
+Simple programs developed while learning Python!
