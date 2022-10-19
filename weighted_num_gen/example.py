@@ -1,9 +1,10 @@
-from src import RandomGen
+from .RandomGen import RandomGen
+
 
 def main():
 	nums = [-1, 0, 1, 2, 3]
 	weights = [0.01, 0.3, 0.58, 0.1, 0.01]
-	thing = RandomGen.RandomGen(nums, weights)
+	thing = RandomGen(nums, weights)
 
 	results = [0] * len(nums)
 	runs = 100000

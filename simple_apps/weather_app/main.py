@@ -40,8 +40,7 @@ def parse_weather_html(html):
     temp = soup.find(class_='wu-unit-temperature').find(class_='wu-value').get_text()
     scale = soup.find(class_='wu-unit-temperature').find(class_='wu-label').get_text()
 
-    loc = clean_text(loc)
-    loc = loc.split('\n')
+    loc = clean_text(loc).split('\n')
     loc = loc[0].strip()
     condition = clean_text(condition)
     temp = clean_text(temp)
@@ -58,7 +57,6 @@ def clean_text(text: str):
 
     text = text.strip()
     return text
-
 
 
 def main():

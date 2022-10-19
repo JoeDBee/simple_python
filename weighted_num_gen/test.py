@@ -1,13 +1,14 @@
-from src import RandomGen
+from .RandomGen import RandomGen
 import unittest
 import random
+
 
 class TestMethods(unittest.TestCase):
 	"""Test Methods in RandomGen class"""
 
 	def setUp(self):
-		self.nums = [random.randint(0, 100) for iter in range(10)]
-		self.generator =  RandomGen.RandomGen(self.nums, self.nums)
+		self.nums = [random.randint(0, 100) for i in range(10)]
+		self.generator = RandomGen(self.nums, self.nums)
 
 	def tearDown(self):
 		del self.generator
@@ -26,7 +27,7 @@ class TestMethods(unittest.TestCase):
 class TestException(unittest.TestCase):
 	"""Test exceptions raised correctly in RandomGen class"""
 	def setUp(self):
-		self.nums = [random.randint(0, 100) for iter in range(10)]
+		self.nums = [random.randint(0, 100) for i in range(10)]
 		self.weights = self.nums
 
 	def tearDown(self):
@@ -36,15 +37,14 @@ class TestException(unittest.TestCase):
 	def test_inputs_not_equal(self):
 		"""Test value error assertion raised if object args are not equal in length"""
 		self.weights = self.weights + [1]
-		self.assertRaises(ValueError, RandomGen.RandomGen, self.nums, self.weights)
+		self.assertRaises(ValueError, RandomGen, self.nums, self.weights)
 
 	def test_negative_weight(self):
 		"""Test value error assertion raised if negative weight supplied"""
 		self.weights[0] = -1
-		self.assertRaises(ValueError, RandomGen.RandomGen, self.nums, self.weights)
-
+		self.assertRaises(ValueError, RandomGen, self.nums, self.weights)
 
 
 if __name__ == '__main__':
-    unittest.main()
+	unittest.main()
 
